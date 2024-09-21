@@ -5,6 +5,7 @@
 
 	&__button {
 		position: relative;
+		background: none;
 		border: 2px solid var(--text-color);
 		border-radius: 50px;
 		outline: none;
@@ -22,5 +23,7 @@
 		aspect-ratio: 1 / 1;
 		border-radius: 50%;
 		background-color: var(--text-color);
+		transition-property: transform, left;
+		transition-duration: 0.2s;
 	}
 }

@@ -1,6 +1,15 @@
+import {useState} from "react";
+
 import "./color-theme.scss";
 
 export default function ColorTheme() {
+	const [whiteTheme, setWhiteTheme] = useState(true);
+
+	function handleColorTheme() {
+		document.body.classList.toggle("dark-theme");
+		setWhiteTheme(!whiteTheme);
+	}
+
 	return (
 		<div className='color-theme'>
 			<svg
@@ -69,8 +78,14 @@ export default function ColorTheme() {
 					/>
 				</g>
 			</svg>
-			<button className='color-theme__button'>
-				<span className='color-theme__circle'></span>
+			<button className='color-theme__button' onClick={handleColorTheme}>
+				<span
+					className='color-theme__circle'
+					style={{
+						transform: !whiteTheme && "translateX(-100%)",
+						left: !whiteTheme && "100%",
+					}}
+				></span>
 			</button>
 			<svg
 				version='1.0'
