@@ -1,3 +1,5 @@
+import "./color-theme.scss";
+
 export default function ColorTheme() {
 	return (
 		<div className='color-theme'>
@@ -10,7 +12,11 @@ export default function ColorTheme() {
 				preserveAspectRatio='xMidYMid meet'
 			>
 				<metadata>Created by potrace 1.16, written by Peter Selinger 2001-2019</metadata>
-				<g transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)' fill='#000000' stroke='none'>
+				<g
+					transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)'
+					fill='var(--text-color)'
+					stroke='none'
+				>
 					<path
 						d='M2475 5101 c-40 -24 -71 -60 -84 -94 -7 -18 -11 -139 -11 -325 0
     -341 4 -358 81 -409 90 -59 216 -25 260 70 17 38 19 69 19 339 0 186 -4 307
@@ -75,7 +81,11 @@ export default function ColorTheme() {
 				preserveAspectRatio='xMidYMid meet'
 			>
 				<metadata>Created by potrace 1.16, written by Peter Selinger 2001-2019</metadata>
-				<g transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)' fill='#000000' stroke='none'>
+				<g
+					transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)'
+					fill='var(--text-color)'
+					stroke='none'
+				>
 					<path
 						d='M1910 4756 c-684 -277 -1186 -852 -1365 -1563 -55 -216 -68 -354 -62
     -647 5 -261 13 -331 63 -529 299 -1187 1523 -1930 2690 -1632 565 144 1060

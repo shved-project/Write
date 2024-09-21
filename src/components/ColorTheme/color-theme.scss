@@ -1,0 +1,26 @@
+.color-theme {
+	display: flex;
+	align-items: center;
+	column-gap: 5px;
+
+	&__button {
+		position: relative;
+		border: 2px solid var(--text-color);
+		border-radius: 50px;
+		outline: none;
+		width: 35px;
+		height: 20px;
+		padding: 0;
+		cursor: pointer;
+	}
+	&__circle {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+		background-color: var(--text-color);
+	}
+}
