@@ -3,11 +3,16 @@ import {useState} from "react";
 import "./color-theme.scss";
 
 export default function ColorTheme() {
-	const [whiteTheme, setWhiteTheme] = useState(true);
+	let isDarkLocalColorTheme = localStorage.getItem("darkTheme") === "true";
+
+	const [darkTheme, setdarkTheme] = useState(isDarkLocalColorTheme);
+	darkTheme && document.body.classList.add("dark-theme");
 
 	function handleColorTheme() {
 		document.body.classList.toggle("dark-theme");
-		setWhiteTheme(!whiteTheme);
+		setdarkTheme(!darkTheme);
+
+		localStorage.setItem("darkTheme", !darkTheme);
 	}
 
 	return (
@@ -82,8 +87,8 @@ export default function ColorTheme() {
 				<span
 					className='color-theme__circle'
 					style={{
-						transform: !whiteTheme && "translateX(-100%)",
-						left: !whiteTheme && "100%",
+						transform: darkTheme && "translateX(-100%)",
+						left: darkTheme && "100%",
 					}}
 				></span>
 			</button>
