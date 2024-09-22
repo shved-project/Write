@@ -2,6 +2,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--bg-color);
 	padding: 20px 30px;
-	box-shadow: 0 0 15px var(--bg-card-color);
+	box-shadow: 0 10px 15px var(--bg-card-color);
 }
