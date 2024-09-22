@@ -8,7 +8,7 @@ export default function Note() {
 				<button type='button'>Карандаш</button>
 				<button type='button'>Закрыть</button>
 			</div>
-			<div className='note__card'>
+			<div className='note__card transition-bg'>
 				<h2 className='note__card-title'>Заголовок</h2>
 				<p className='note__card-text'>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum dolorum quas aspernatur
