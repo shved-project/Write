@@ -12,27 +12,35 @@ export default function Notes() {
 
 	const reverseNotesData = notesData.slice().reverse();
 
-	function handleAddNote() {
-		setNotesData([...notesData, {title: "test", text: "test", bgColor: "#fafafa", deadLine: "12.12.12"}]);
-	}
-
-	function AddNoteCard({onAddNote}) {
-		return (
-			<button onClick={onAddNote} className='add-note' title='Создать записку'>
-				+
-			</button>
-		);
-	}
-
 	return (
 		<section className='notes'>
-			<AddNoteCard onAddNote={handleAddNote} />
+			<AddNoteCard />
 
 			{reverseNotesData.map((note) => {
 				const {title, text, bgColor, deadLine} = note;
 
-				return <Note title={title} text={text} bgColor={bgColor} deadline={deadLine} />;
+				return (
+					<Note
+						key={title + text + bgColor + deadLine}
+						title={title}
+						text={text}
+						bgColor={bgColor}
+						deadline={deadLine}
+					/>
+				);
 			})}
 		</section>
 	);
+
+	function AddNoteCard() {
+		function handleAddNote() {
+			setNotesData([...notesData, {title: "test", text: "test", bgColor: "#fafafa", deadLine: "12.12.12"}]);
+		}
+
+		return (
+			<button onClick={handleAddNote} className='add-note' title='Создать записку'>
+				+
+			</button>
+		);
+	}
 }
