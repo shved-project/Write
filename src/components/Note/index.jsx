@@ -4,7 +4,7 @@ export default function Note() {
 	return (
 		<article className='note'>
 			<div className='note__buttons'>
-				<button className='note__button' type='button'>
+				<button className='note__button' type='button' title='Закрыть задачу'>
 					<svg
 						version='1.0'
 						xmlns='http://www.w3.org/2000/svg'
@@ -14,11 +14,7 @@ export default function Note() {
 						preserveAspectRatio='xMidYMid meet'
 					>
 						<metadata>Created by potrace 1.16, written by Peter Selinger 2001-2019</metadata>
-						<g
-							transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)'
-							fill='#000000'
-							stroke='none'
-						>
+						<g transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)' stroke='none'>
 							<path
 								d='M4365 4451 c-156 -45 -87 18 -1285 -1177 -711 -710 -1114 -1105
 -1130 -1108 -103 -22 -73 -46 -554 433 -431 429 -443 439 -526 480 -159 77
@@ -31,7 +27,7 @@ export default function Note() {
 						</g>
 					</svg>
 				</button>
-				<button className='note__button' type='button'>
+				<button className='note__button' type='button' title='Редактировать задачу'>
 					<svg
 						version='1.0'
 						xmlns='http://www.w3.org/2000/svg'
@@ -41,11 +37,7 @@ export default function Note() {
 						preserveAspectRatio='xMidYMid meet'
 					>
 						<metadata>Created by potrace 1.16, written by Peter Selinger 2001-2019</metadata>
-						<g
-							transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)'
-							fill='#000000'
-							stroke='none'
-						>
+						<g transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)' stroke='none'>
 							<path
 								d='M4120 5104 c-136 -29 -174 -57 -423 -303 l-229 -227 554 -552 553
 -552 216 216 c232 232 273 286 310 407 18 56 20 86 17 180 -8 206 -42 264
@@ -59,7 +51,7 @@ export default function Note() {
 						</g>
 					</svg>
 				</button>
-				<button className='note__button' type='button'>
+				<button className='note__button' type='button' title='Удалить задачу'>
 					<svg
 						version='1.0'
 						xmlns='http://www.w3.org/2000/svg'
@@ -69,11 +61,7 @@ export default function Note() {
 						preserveAspectRatio='xMidYMid meet'
 					>
 						<metadata>Created by potrace 1.16, written by Peter Selinger 2001-2019</metadata>
-						<g
-							transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)'
-							fill='#000000'
-							stroke='none'
-						>
+						<g transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)' stroke='none'>
 							<path
 								d='M425 5101 c-196 -56 -359 -222 -409 -417 -21 -80 -21 -228 0 -308 9
 -33 32 -92 52 -131 32 -64 103 -138 841 -877 l806 -808 -806 -807 c-738 -740
@@ -96,7 +84,7 @@ export default function Note() {
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum dolorum quas aspernatur
 					ab asperiores aliquam reprehenderit tempora, odit dolorem ducimus non ullam totam cumque.
 				</p>
-				<hr />
+				<hr className='note__card-line' />
 				<div className='note__card-deadline'>До 30.09.2024</div>
 			</div>
 		</article>
