@@ -1,0 +1,19 @@
+.add-note {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+	border: 2px solid var(--text-color);
+	cursor: pointer;
+	font-family: Nunito-SemiBold;
+	font-size: 160px;
+	color: var(--text-color);
+	border-radius: 10px;
+	background: none;
+	outline: none;
+	transition: transform 0.2s ease-out;
+
+	&:hover {
+		transform: scale(1.02);
+	}
+}
