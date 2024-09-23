@@ -1,6 +1,6 @@
 import "./note.scss";
 
-export default function Note() {
+export default function Note({title, text, bgColor, deadline}) {
 	return (
 		<article className='note'>
 			<div className='note__buttons'>
@@ -78,17 +78,11 @@ export default function Note() {
 					</svg>
 				</button>
 			</div>
-			<div className='note__card transition-bg' title='Подробнее'>
-				<h2 className='note__card-title'>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea minima nostrum ipsa qui illo
-					consequatur?
-				</h2>
-				<p className='note__card-text'>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum dolorum quas aspernatur
-					ab asperiores aliquam reprehenderit tempora, odit dolorem ducimus non ullam totam cumque.
-				</p>
+			<div className='note__card transition-bg' title='Подробнее' style={{backgroundColor: bgColor}}>
+				<h2 className='note__card-title'>{title}</h2>
+				<p className='note__card-text'>{text}</p>
 				<hr className='note__card-line' />
-				<div className='note__card-deadline'>До 30.09.2024</div>
+				<div className='note__card-deadline'>До: {deadline}</div>
 			</div>
 		</article>
 	);
