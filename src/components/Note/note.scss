@@ -29,13 +29,13 @@
 		cursor: pointer;
 
 		&:first-child {
-			fill: #00ca00;
+			fill: var(--color-green);
 		}
 		&:nth-child(2) {
-			fill: #969696;
+			fill: var(--color-grey);
 		}
 		&:last-child {
-			fill: #ff4343;
+			fill: var(--color-red);
 		}
 	}
 
