@@ -5,3 +5,11 @@ body {
 	font-family: Nunito-regular !important;
 	line-height: 1.7rem !important;
 }
+
+button,
+textarea,
+[type="text"] {
+	&:focus-visible {
+		outline: 2px solid #ffa500;
+	}
+}
