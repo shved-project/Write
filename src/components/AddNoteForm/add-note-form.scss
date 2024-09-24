@@ -12,6 +12,7 @@
 .add-note-form {
 	cursor: auto;
 	width: 600px;
+	color: #333333;
 
 	&__colors {
 		display: flex;
@@ -27,12 +28,16 @@
 		&:checked + .add-note-form__color-custom {
 			transform: scale(1.15);
 		}
+
+		&:focus-visible + .add-note-form__color-custom {
+			border: 2px solid #ffa500;
+		}
 	}
 	&__color-custom {
 		display: block;
 		height: 40px;
 		cursor: pointer;
-		border-radius: 10px;
+		border-radius: var(--border-radius);
 		transition: transform 0.2s ease-out;
 	}
 
@@ -41,7 +46,7 @@
 		flex-direction: column;
 		row-gap: 15px;
 		padding: 40px 30px;
-		border-radius: 10px;
+		border-radius: var(--border-radius);
 		transition: background-color 0.2s ease-out;
 	}
 
@@ -85,11 +90,24 @@
 		justify-content: space-between;
 	}
 	&__button {
-		font-size: 25px;
+		padding: 10px 20px;
+		font-size: 22px;
+		font-family: Nunito-SemiBold;
+		text-transform: uppercase;
 		background: none;
 		border: none;
 		outline: none;
 		background-color: #fafafa;
 		cursor: pointer;
+		border-radius: var(--border-radius);
+
+		&-save {
+			color: #fafafa;
+			background-color: var(--color-green);
+		}
+		&-cancel {
+			color: #fafafa;
+			background-color: var(--color-red);
+		}
 	}
 }
