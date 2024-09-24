@@ -8,7 +8,7 @@
 	font-family: Nunito-SemiBold;
 	font-size: 160px;
 	color: var(--text-color);
-	border-radius: 10px;
+	border-radius: var(--border-radius);
 	background: none;
 	outline: none;
 	transition: transform 0.2s ease-out;

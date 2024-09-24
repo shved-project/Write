@@ -41,7 +41,7 @@
 
 	&__card {
 		padding: 40px 30px;
-		border-radius: 10px;
+		border-radius: var(--border-radius);
 		transition-property: background-color, box-shadow !important;
 		transition-delay: 0.2s;
 		cursor: pointer;
