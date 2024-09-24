@@ -1,16 +1,29 @@
 import {createPortal} from "react-dom";
 
+import "./add-note-form.scss";
+
 export default function AddNoteForm({setOpenAddNoteForm}) {
+	function ColorNote({color}) {
+		return (
+			<div className='add-note-form__color-wrapper'>
+				<label>
+					<input className='add-note-form__color hide-elem' type='radio' name='noteColor' value={color} />
+					<span className='add-note-form__color-custom' style={{backgroundColor: color}}></span>
+				</label>
+			</div>
+		);
+	}
+
 	return createPortal(
-		<div className='add-note-form__wrapper'>
-			<form className='add-note-form' name='addNoteForm'>
+		<div className='add-note-form__wrapper' onClick={() => setOpenAddNoteForm(false)}>
+			<form className='add-note-form' name='addNoteForm' onClick={(e) => e.stopPropagation()}>
 				<div className='add-note-form__colors'>
-					<input className='add-note-form__color' type='radio' name='noteColor' />
-					<input className='add-note-form__color' type='radio' name='noteColor' />
-					<input className='add-note-form__color' type='radio' name='noteColor' />
-					<input className='add-note-form__color' type='radio' name='noteColor' />
-					<input className='add-note-form__color' type='radio' name='noteColor' />
-					<input className='add-note-form__color' type='radio' name='noteColor' />
+					<ColorNote color={"#9effab"} />
+					<ColorNote color={"#ff9ec5"} />
+					<ColorNote color={"#9ea6ff"} />
+					<ColorNote color={"#fff59e"} />
+					<ColorNote color={"#ffd39e"} />
+					<ColorNote color={"#9eeaff"} />
 				</div>
 				<input type='text' name='noteTitle' placeholder='Запиши' />
 				<textarea name='noteText' placeholder='Поясни'></textarea>
