@@ -33,6 +33,7 @@ export default function AddNoteForm({setOpenAddNoteForm}) {
 						type='text'
 						name='noteTitle'
 						placeholder='Запиши'
+						autoFocus
 					/>
 					<textarea
 						className='add-note-form__input add-note-form__description'
