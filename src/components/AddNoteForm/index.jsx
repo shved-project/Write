@@ -8,8 +8,8 @@ export default function AddNoteForm({setOpenAddNoteForm}) {
 	const [currentColorNote, setCurrentColorNote] = useState(colorsNote[0]);
 
 	return createPortal(
-		<div className='add-note-form__wrapper' onClick={() => setOpenAddNoteForm(false)}>
-			<form className='add-note-form' name='addNoteForm' onClick={(e) => e.stopPropagation()}>
+		<div className='add-note-form__wrapper' onMouseDown={() => setOpenAddNoteForm(false)}>
+			<form className='add-note-form' name='addNoteForm' onMouseDown={(e) => e.stopPropagation()}>
 				<div className='add-note-form__colors'>
 					{colorsNote.map((color) => (
 						<div className='add-note-form__color-wrapper' key={color}>
@@ -28,10 +28,19 @@ export default function AddNoteForm({setOpenAddNoteForm}) {
 					))}
 				</div>
 				<div className='add-note-form__block' style={{backgroundColor: currentColorNote}}>
-					<input type='text' name='noteTitle' placeholder='Запиши' />
-					<textarea name='noteText' placeholder='Поясни'></textarea>
+					<input
+						className='add-note-form__input add-note-form__title'
+						type='text'
+						name='noteTitle'
+						placeholder='Запиши'
+					/>
+					<textarea
+						className='add-note-form__input add-note-form__description'
+						name='noteDescription'
+						placeholder='Поясни'
+					></textarea>
 					<div className='add-note-form__deadline'>
-						Дедлайн: <input type='date' name='noteDeadline' />
+						Дедлайн: <input className='add-note-form__date' type='date' name='noteDeadline' />
 					</div>
 					<div className='add-note-form__buttons'>
 						<button
