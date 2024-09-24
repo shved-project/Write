@@ -3,13 +3,33 @@ import {createPortal} from "react-dom";
 
 import "./add-note-form.scss";
 
-export default function AddNoteForm({setOpenAddNoteForm}) {
+export default function AddNoteForm({setOpenAddNoteForm, notesData, setNotesData}) {
 	const colorsNote = ["#9effab", "#ff9ec5", "#9ea6ff", "#fff59e", "#ffd39e", "#9eeaff"];
 	const [currentColorNote, setCurrentColorNote] = useState(colorsNote[0]);
 
+	function handleSubmitNote(event) {
+		event.preventDefault();
+
+		const target = event.target;
+		let targetData = {};
+
+		targetData.title = target.noteTitle.value;
+		targetData.text = target.noteDescription.value;
+		targetData.bgColor = target.noteColor.value;
+		targetData.deadline = target.noteDeadline.value;
+
+		setNotesData([...notesData, targetData]);
+		setOpenAddNoteForm(false);
+	}
+
 	return createPortal(
 		<div className='add-note-form__wrapper' onMouseDown={() => setOpenAddNoteForm(false)}>
-			<form className='add-note-form' name='addNoteForm' onMouseDown={(e) => e.stopPropagation()}>
+			<form
+				className='add-note-form'
+				name='addNoteForm'
+				onMouseDown={(event) => event.stopPropagation()}
+				onSubmit={handleSubmitNote}
+			>
 				<div className='add-note-form__colors'>
 					{colorsNote.map((color) => (
 						<div className='add-note-form__color-wrapper' key={color}>
@@ -51,7 +71,7 @@ export default function AddNoteForm({setOpenAddNoteForm}) {
 						>
 							Отменить
 						</button>
-						<button className='add-note-form__button add-note-form__button-save' type='button'>
+						<button className='add-note-form__button add-note-form__button-save' type='submit'>
 							Сохранить
 						</button>
 					</div>

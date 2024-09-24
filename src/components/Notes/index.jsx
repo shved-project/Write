@@ -19,15 +19,15 @@ export default function Notes() {
 			<AddNoteCard />
 
 			{reverseNotesData.map((note) => {
-				const {title, text, bgColor, deadLine} = note;
+				const {title, text, bgColor, deadline} = note;
 
 				return (
 					<Note
-						key={title + text + bgColor + deadLine}
+						key={title + text + bgColor + deadline}
 						title={title}
 						text={text}
 						bgColor={bgColor}
-						deadline={deadLine}
+						deadline={deadline}
 					/>
 				);
 			})}
@@ -44,7 +44,13 @@ export default function Notes() {
 				<button onClick={handleOpenAddNoteForm} className='add-note' title='Создать записку'>
 					+
 				</button>
-				{openAddNoteForm && <AddNoteForm setOpenAddNoteForm={setOpenAddNoteForm} />}
+				{openAddNoteForm && (
+					<AddNoteForm
+						setOpenAddNoteForm={setOpenAddNoteForm}
+						notesData={notesData}
+						setNotesData={setNotesData}
+					/>
+				)}
 			</>
 		);
 	}
