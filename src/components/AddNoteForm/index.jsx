@@ -1,5 +1,7 @@
+import {createPortal} from "react-dom";
+
 export default function AddNoteForm() {
-	return (
+	return createPortal(
 		<div className='add-note-form__wrapper'>
 			<form className='add-note-form' name='addNoteForm'>
 				<div className='add-note-form__colors'>
@@ -24,6 +26,7 @@ export default function AddNoteForm() {
 					</button>
 				</div>
 			</form>
-		</div>
+		</div>,
+		document.querySelector("#modal")
 	);
 }
