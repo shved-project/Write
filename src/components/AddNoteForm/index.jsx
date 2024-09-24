@@ -1,6 +1,6 @@
 import {createPortal} from "react-dom";
 
-export default function AddNoteForm() {
+export default function AddNoteForm({setOpenAddNoteForm}) {
 	return createPortal(
 		<div className='add-note-form__wrapper'>
 			<form className='add-note-form' name='addNoteForm'>
@@ -18,7 +18,11 @@ export default function AddNoteForm() {
 					Дедлайн: <input type='date' name='noteDeadline' />
 				</div>
 				<div className='add-note-form__buttons'>
-					<button className='add-note-form__button add-note-form__button-cancel' type='button'>
+					<button
+						className='add-note-form__button add-note-form__button-cancel'
+						type='button'
+						onClick={() => setOpenAddNoteForm(false)}
+					>
 						Отменить
 					</button>
 					<button className='add-note-form__button add-note-form__button-save' type='button'>

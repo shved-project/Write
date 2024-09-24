@@ -1,6 +1,7 @@
 import {useState} from "react";
 
 import Note from "../Note";
+import AddNoteForm from "../AddNoteForm";
 
 import NOTES_DATA from "../../js/notes-data";
 
@@ -9,6 +10,7 @@ import "./add-note.scss";
 
 export default function Notes() {
 	const [notesData, setNotesData] = useState(NOTES_DATA);
+	const [openAddNoteForm, setOpenAddNoteForm] = useState(false);
 
 	const reverseNotesData = notesData.slice().reverse();
 
@@ -33,14 +35,17 @@ export default function Notes() {
 	);
 
 	function AddNoteCard() {
-		function handleAddNote() {
-			setNotesData([...notesData, {title: "test", text: "test", bgColor: "#fafafa", deadLine: "12.12.12"}]);
+		function handleOpenAddNoteForm() {
+			setOpenAddNoteForm(true);
 		}
 
 		return (
-			<button onClick={handleAddNote} className='add-note' title='Создать записку'>
-				+
-			</button>
+			<>
+				<button onClick={handleOpenAddNoteForm} className='add-note' title='Создать записку'>
+					+
+				</button>
+				{openAddNoteForm && <AddNoteForm setOpenAddNoteForm={setOpenAddNoteForm} />}
+			</>
 		);
 	}
 }
