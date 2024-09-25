@@ -3,7 +3,7 @@ import {createPortal} from "react-dom";
 
 import "./add-note-form.scss";
 
-export default function AddNoteForm({setOpenAddNoteForm, notesData, setNotesData}) {
+export default function AddNoteForm({openAddNoteForm, setOpenAddNoteForm, notesData, setNotesData}) {
 	const colorsNote = ["#9effab", "#ff9ec5", "#9ea6ff", "#fff59e", "#ffd39e", "#9eeaff"];
 	const [currentColorNote, setCurrentColorNote] = useState(colorsNote[0]);
 
@@ -23,12 +23,21 @@ export default function AddNoteForm({setOpenAddNoteForm, notesData, setNotesData
 	}
 
 	return createPortal(
-		<div className='add-note-form__wrapper' onMouseDown={() => setOpenAddNoteForm(false)}>
+		<div
+			className='add-note-form__wrapper'
+			onMouseDown={() => setOpenAddNoteForm(false)}
+			style={{animation: openAddNoteForm ? "bgFormWrapper 0.2s forwards" : "bgFormWrapper 0.2s forwards reverse"}}
+		>
 			<form
 				className='add-note-form'
 				name='addNoteForm'
 				onMouseDown={(event) => event.stopPropagation()}
 				onSubmit={handleSubmitNote}
+				style={{
+					animation: openAddNoteForm
+						? "appearanceForm 0.2s forwards"
+						: "appearanceForm 0.2s forwards reverse",
+				}}
 			>
 				<div className='add-note-form__colors'>
 					{colorsNote.map((color) => (

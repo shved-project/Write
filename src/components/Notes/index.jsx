@@ -44,13 +44,12 @@ export default function Notes() {
 				<button onClick={handleOpenAddNoteForm} className='add-note' title='Создать записку'>
 					+
 				</button>
-				{openAddNoteForm && (
-					<AddNoteForm
-						setOpenAddNoteForm={setOpenAddNoteForm}
-						notesData={notesData}
-						setNotesData={setNotesData}
-					/>
-				)}
+				<AddNoteForm
+					openAddNoteForm={openAddNoteForm}
+					setOpenAddNoteForm={setOpenAddNoteForm}
+					notesData={notesData}
+					setNotesData={setNotesData}
+				/>
 			</>
 		);
 	}

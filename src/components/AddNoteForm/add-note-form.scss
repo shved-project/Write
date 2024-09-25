@@ -1,3 +1,24 @@
+@keyframes bgFormWrapper {
+	from {
+		background-color: #00000000;
+		pointer-events: none;
+	}
+	to {
+		background-color: #00000070;
+		pointer-events: auto;
+	}
+}
+@keyframes appearanceForm {
+	from {
+		opacity: 0;
+		transform: translateY(10%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .add-note-form__wrapper {
 	display: flex;
 	align-items: center;
@@ -5,7 +26,6 @@
 	position: fixed;
 	inset: 0;
 	z-index: 900;
-	background-color: #0000007c;
 	cursor: pointer;
 }
 
